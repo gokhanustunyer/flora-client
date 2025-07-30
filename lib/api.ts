@@ -1,6 +1,6 @@
 import { ApiResponse } from '@/types';
 
-const API_BASE_URL = 'https://flora-backend-adcwd9a1h-gokhans-projects-51f5a8d2.vercel.app/';
+const API_BASE_URL = 'https://flora-backend-adcwd9a1h-gokhans-projects-51f5a8d2.vercel.app';
 
 export const uploadImage = async (file: File): Promise<ApiResponse> => {
   try {
