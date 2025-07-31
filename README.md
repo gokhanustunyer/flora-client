@@ -1,178 +1,370 @@
-# Good Natured Pup - Dog Image Transformation App
+# 🐕 Flora Client - AI Dog Photo Transformation
 
-A responsive frontend application for transforming dog photos using AI, built with Next.js 14, TypeScript, and Tailwind CSS.
+<div align="center">
 
-## Features
+**Transform your pup's photos with the power of AI**
 
-- **Image Upload**: Drag and drop or click to upload dog photos (JPG/PNG, max 10MB)
-- **AI Transformation**: Send images to custom REST API for AI-generated transformations
-- **Side-by-Side Comparison**: Toggle between original and generated images
-- **Download Functionality**: Download transformed images with GNB branding
-- **Social Sharing**: Share to Instagram and Facebook with pre-filled hashtags
-- **Responsive Design**: Works on all devices (min width 320px)
-- **WCAG 2.1 AA Compliant**: Accessible design with proper ARIA labels and keyboard navigation
+*A modern, responsive web application that uses artificial intelligence to create stunning transformations of dog photos with Good Natured Brand styling.*
 
-## Tech Stack
+[![Next.js](https://img.shields.io/badge/Next.js-14.0.4-black?style=flat&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3.3-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.0-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
+[![Accessibility](https://img.shields.io/badge/WCAG-2.1%20AA-green?style=flat)](https://www.w3.org/WAI/WCAG21/quickref/)
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **State Management**: React Hooks
-- **API Integration**: Fetch API with multipart/form-data
+[✨ Live Demo](#) • [📖 Documentation](#installation) • [🤝 Contributing](#contributing)
 
-## Project Structure
+</div>
 
-```
-flora-client/
-├── app/                    # Next.js App Router
-│   ├── globals.css        # Global styles and Tailwind imports
-│   ├── layout.tsx         # Root layout component
-│   └── page.tsx           # Main page component
-├── components/            # Reusable React components
-│   ├── UploadForm.tsx     # File upload with validation
-│   ├── ImageViewer.tsx    # Image display with toggle
-│   ├── DownloadButton.tsx # Image download functionality
-│   ├── ShareButtons.tsx   # Social media sharing
-│   ├── LoadingSpinner.tsx # Loading indicator
-│   └── ErrorMessage.tsx   # Error display component
-├── lib/                   # Utility functions
-│   └── api.ts            # API integration functions
-├── types/                 # TypeScript type definitions
-│   └── index.ts          # Component and API types
-├── public/               # Static assets
-│   └── logo.png          # GNB logo placeholder
-└── package.json          # Dependencies and scripts
-```
+---
 
-## Getting Started
+## 🎯 Overview
+
+Flora Client is a sophisticated frontend application that leverages AI technology to transform dog photos with Good Natured Brand's signature styling. Built with modern web technologies, it offers a seamless, accessible, and delightful user experience across all devices.
+
+### ✨ Key Features
+
+- **🎨 AI-Powered Transformations** - Advanced AI processing creates stunning visual transformations
+- **📱 Responsive Design** - Optimized for all devices with mobile-first approach (320px+)
+- **♿ Accessibility First** - WCAG 2.1 AA compliant with full keyboard navigation
+- **🖼️ Side-by-Side Comparison** - Interactive before/after image viewer
+- **📥 Smart Upload** - Drag & drop with comprehensive file validation
+- **📲 Social Sharing** - One-click sharing to Instagram and Facebook
+- **💾 Download & Branding** - Download transformed images with GNB logo overlay
+- **🎭 Brand Integration** - Custom Good Natured Brand color palette and styling
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Framework**: [Next.js 14](https://nextjs.org/) with App Router
+- **Language**: [TypeScript 5.3](https://www.typescriptlang.org/) with strict mode
+- **Styling**: [Tailwind CSS 3.4](https://tailwindcss.com/) with custom brand colors
+- **State Management**: React Hooks with TypeScript
+- **Icons**: Heroicons (embedded SVGs)
+
+### Development Tools
+- **Linting**: ESLint with Next.js configuration
+- **Type Checking**: TypeScript strict mode
+- **PostCSS**: For Tailwind CSS processing
+- **File Validation**: Custom image validation with size/type checking
+
+### API Integration
+- **HTTP Client**: Native Fetch API
+- **Data Format**: multipart/form-data for uploads
+- **Response Format**: JSON with typed interfaces
+- **Error Handling**: Comprehensive error boundaries
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm or yarn
+- **Node.js**: 18.0.0 or higher
+- **Package Manager**: npm, yarn, or pnpm
 
 ### Installation
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd flora-client
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/flora-client.git
+   cd flora-client
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. **Configure environment (optional)**
+   ```bash
+   # Create .env.local for custom API endpoint
+   echo "NEXT_PUBLIC_API_BASE_URL=https://your-api-endpoint.com" > .env.local
+   ```
+
+4. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open in browser**
+   
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 📁 Project Structure
+
+```
+flora-client/
+├── 📱 app/                     # Next.js App Router
+│   ├── globals.css             # Global styles & Tailwind imports
+│   ├── layout.tsx              # Root layout with metadata
+│   └── page.tsx                # Main application page
+├── 🧩 components/              # Reusable React components
+│   ├── UploadForm.tsx          # File upload with drag & drop
+│   ├── ImageViewer.tsx         # Side-by-side image comparison
+│   ├── DownloadButton.tsx      # Download with branding overlay
+│   ├── ShareButtons.tsx        # Social media sharing
+│   ├── LoadingSpinner.tsx      # Loading states
+│   └── ErrorMessage.tsx        # Error handling UI
+├── 🔧 lib/                     # Utility functions
+│   └── api.ts                  # API client & validation
+├── 🏷️ types/                   # TypeScript definitions
+│   └── index.ts                # Component & API interfaces
+├── 🎨 public/                  # Static assets
+│   └── logo.png                # GNB logo for branding
+├── ⚙️ Configuration files
+│   ├── next.config.js          # Next.js configuration
+│   ├── tailwind.config.js      # Custom colors & themes
+│   ├── tsconfig.json           # TypeScript settings
+│   └── package.json            # Dependencies & scripts
 ```
 
-2. Install dependencies:
-```bash
-npm install
+---
+
+## 🔌 API Integration
+
+The application integrates with a REST API for AI image processing:
+
+### Endpoint
+```
+POST https://flora-backend-five.vercel.app/api/v1/generate
 ```
 
-3. Create environment file (optional):
-```bash
-# Create .env.local file
-NEXT_PUBLIC_API_BASE_URL=http://localhost:3001
+### Request Format
+```typescript
+// multipart/form-data
+FormData {
+  image: File // JPG, PNG, WebP, BMP (max 10MB)
+}
 ```
 
-4. Run the development server:
-```bash
-npm run dev
+### Response Format
+```typescript
+interface ApiResponse {
+  success: boolean;
+  data?: {
+    imageUrl?: string;        // Public URL to generated image
+    base64Image?: string;     // Base64 encoded image data
+  };
+  error?: string;             // Error message if failed
+}
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+### File Validation
+- **Accepted formats**: JPG, JPEG, PNG, WebP, BMP
+- **Maximum size**: 10MB
+- **Client-side validation**: Type and size checking before upload
 
-## API Integration
+---
 
-The app expects a REST API endpoint at `/api/generate` that:
-
-- Accepts `POST` requests with `multipart/form-data`
-- Expects an `image` field containing the uploaded file
-- Returns JSON response with:
-  ```json
-  {
-    "success": true,
-    "data": {
-      "imageUrl": "https://example.com/image.jpg",
-      "base64Image": "data:image/jpeg;base64,..."
-    }
-  }
-  ```
-
-## Customization
+## 🎨 Customization
 
 ### Brand Colors
 
-The app uses custom GNB brand colors defined in `tailwind.config.js`:
+The application uses a custom color palette defined in `tailwind.config.js`:
 
-- **Green Palette**: `gnb-green-50` to `gnb-green-900`
-- **Beige Palette**: `gnb-beige-50` to `gnb-beige-900`
+```javascript
+// Good Natured Brand Green Palette
+'gnb-green': {
+  50: '#f0f9f4',   // Light backgrounds
+  600: '#2d7d51',  // Primary buttons
+  700: '#276442',  // Hover states
+}
 
-### Logo
+// Good Natured Brand Beige Palette  
+'gnb-beige': {
+  50: '#fefefe',   // Alternative backgrounds
+  500: '#e2d4c2',  // Accent colors
+}
+```
 
-Replace `public/logo.png` with your actual GNB logo. The logo is displayed as an overlay on generated images.
+### Logo & Branding
+
+1. **Replace Logo**: Update `public/logo.png` with your brand logo
+2. **Modify Overlay**: Edit logo positioning in `ImageViewer.tsx`
+3. **Update Colors**: Customize color palette in `tailwind.config.js`
 
 ### Social Sharing
 
-Modify hashtags and mentions in `components/ShareButtons.tsx`:
-- Default hashtag: `#GoodNaturedPup`
-- Default mention: `@goodnaturedbrand`
+Configure sharing parameters in `components/ShareButtons.tsx`:
 
-## Accessibility Features
+```typescript
+const defaultHashtag = '#GoodNaturedPup';
+const defaultMention = '@goodnaturedbrand';
+```
 
-- **Keyboard Navigation**: All interactive elements are keyboard accessible
-- **Screen Reader Support**: Proper ARIA labels and roles
-- **Focus Management**: Clear focus indicators
-- **Color Contrast**: WCAG 2.1 AA compliant color ratios
-- **Semantic HTML**: Proper heading hierarchy and landmarks
+---
 
-## Responsive Design
+## ♿ Accessibility Features
 
-- **Mobile First**: Designed for 320px minimum width
-- **Breakpoints**: xs (320px), sm (640px), md (768px), lg (1024px), xl (1280px)
-- **Flexible Layout**: Components adapt to different screen sizes
-- **Touch Friendly**: Large touch targets for mobile devices
+Our commitment to inclusivity includes:
 
-## Development
+- **🎯 WCAG 2.1 AA Compliance**: Meets accessibility standards
+- **⌨️ Keyboard Navigation**: Full keyboard accessibility
+- **🔊 Screen Reader Support**: Proper ARIA labels and semantic HTML
+- **🎭 Focus Management**: Clear focus indicators and logical tab order
+- **🌈 Color Contrast**: Sufficient contrast ratios for all text
+- **📱 Touch Targets**: Minimum 44px touch targets for mobile
+
+---
+
+## 📱 Responsive Design
+
+### Breakpoint Strategy
+```css
+/* Mobile First Approach */
+xs:  320px+  /* Extra small devices */
+sm:  640px+  /* Small devices */
+md:  768px+  /* Medium devices */
+lg:  1024px+ /* Large devices */
+xl:  1280px+ /* Extra large devices */
+```
+
+### Key Features
+- **Adaptive Layouts**: Components resize smoothly across breakpoints
+- **Touch-Friendly**: Large buttons and touch targets on mobile
+- **Image Optimization**: Responsive images with proper aspect ratios
+- **Typography Scaling**: Fluid typography that adapts to screen size
+
+---
+
+## 🔧 Development
 
 ### Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
+```bash
+npm run dev     # Start development server with hot reload
+npm run build   # Build optimized production bundle
+npm run start   # Start production server
+npm run lint    # Run ESLint for code quality
+```
 
-### Code Quality
+### Code Quality Standards
 
 - **TypeScript**: Strict type checking enabled
-- **ESLint**: Next.js recommended configuration
-- **Prettier**: Code formatting (recommended)
+- **ESLint**: Next.js recommended rules + custom configurations
+- **Component Architecture**: Modular, reusable components
+- **Error Handling**: Comprehensive error boundaries and user feedback
+- **Performance**: Optimized images, code splitting, and caching
 
-## Deployment
+### Development Workflow
+
+1. **Feature Development**: Create feature branches from `main`
+2. **Code Review**: All changes require pull request review
+3. **Testing**: Manual testing across devices and accessibility tools
+4. **Type Safety**: All components and APIs fully typed
+
+---
+
+## 🚀 Deployment
 
 ### Vercel (Recommended)
 
-1. Push code to GitHub
-2. Connect repository to Vercel
-3. Deploy automatically
+1. **Connect Repository**
+   ```bash
+   # Push to GitHub
+   git push origin main
+   ```
 
-### Other Platforms
+2. **Deploy with Vercel**
+   - Connect your GitHub repository to Vercel
+   - Configure environment variables if needed
+   - Deploy automatically on every push
 
-Build the project and deploy the `out` directory:
+### Alternative Platforms
+
+For other hosting platforms:
 
 ```bash
+# Build the application
 npm run build
-npm run export  # If using static export
+
+# The build output is in the `.next` directory
+# Deploy the entire project directory including .next/
 ```
 
-## Environment Variables
+### Environment Variables
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `NEXT_PUBLIC_API_BASE_URL` | Backend API base URL | `http://localhost:3001` |
+| `NEXT_PUBLIC_API_BASE_URL` | Backend API base URL | `https://flora-backend-five.vercel.app` |
 
-## Browser Support
+---
 
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
+## 🌐 Browser Support
 
-## License
+- **Chrome**: 90+ ✅
+- **Firefox**: 88+ ✅  
+- **Safari**: 14+ ✅
+- **Edge**: 90+ ✅
+- **Mobile**: iOS Safari 14+, Chrome Mobile 90+ ✅
 
-© 2024 Good Natured Brand. All rights reserved. 
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how to get started:
+
+### Development Setup
+
+1. **Fork & Clone**
+   ```bash
+   git clone https://github.com/your-username/flora-client.git
+   cd flora-client
+   npm install
+   ```
+
+2. **Create Feature Branch**
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+3. **Make Changes**
+   - Follow existing code style and patterns
+   - Add TypeScript types for new features
+   - Test across different devices and browsers
+   - Ensure accessibility compliance
+
+4. **Submit Pull Request**
+   - Provide clear description of changes
+   - Include screenshots for UI changes
+   - Reference any related issues
+
+### Contribution Guidelines
+
+- **Code Style**: Follow existing TypeScript and React patterns
+- **Commits**: Use conventional commit messages
+- **Documentation**: Update README for significant changes
+- **Testing**: Ensure all features work across supported browsers
+
+---
+
+## 📄 License
+
+© 2025 Good Natured Brand. All rights reserved.
+
+---
+
+## 🙏 Acknowledgments
+
+- **Next.js Team** - For the amazing React framework
+- **Tailwind CSS** - For the utility-first CSS framework  
+- **Heroicons** - For the beautiful icon set
+- **Vercel** - For seamless deployment platform
+
+---
+
+<div align="center">
+
+**Built with ❤️ by the Flora Team**
+
+[⭐ Star this repo](https://github.com/your-username/flora-client) • [🐛 Report Bug](https://github.com/your-username/flora-client/issues) • [💡 Request Feature](https://github.com/your-username/flora-client/issues)
+
+</div>

@@ -10,6 +10,20 @@ export const metadata: Metadata = {
   keywords: 'dog, AI, image transformation, Good Natured Brand, pet photos',
   authors: [{ name: 'Good Natured Brand' }],
   robots: 'index, follow',
+  icons: {
+    icon: [
+      {
+        url: '/icon.svg',
+        type: 'image/svg+xml',
+      },
+      {
+        url: '/favicon.ico',
+        type: 'image/x-icon',
+      }
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.svg',
+  },
 }
 
 export const viewport = {

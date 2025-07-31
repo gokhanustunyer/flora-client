@@ -71,4 +71,24 @@ a {
 
 .animate-spin {
   animation: spin 1s linear infinite;
+}
+
+/* Custom hover effects */
+.hover\:scale-102:hover {
+  transform: scale(1.02);
+}
+
+/* Smooth gradient animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
 } 
